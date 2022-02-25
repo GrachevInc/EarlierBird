@@ -25,6 +25,17 @@ class ViewController: UIViewController {
         return imageView
     }()
     
+    private let textTimeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Просыпаться в"
+        label.textAlignment = .center
+        label.font = .specialRobotoMedium30()
+        label.textColor = .specialBlue
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
+    
     private let timeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +46,8 @@ class ViewController: UIViewController {
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
+    
+    private var timeLabelStackView = UIStackView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +61,12 @@ class ViewController: UIViewController {
         view.backgroundColor = .specialBackground
         view.addSubview(goalImageView)
         view.addSubview(settingsButton)
-        view.addSubview(timeLabel)
+        
+        timeLabelStackView = .init(arrangedSubviews: [textTimeLabel, timeLabel],
+                                   axis: .vertical,
+                                   spacing: -10)
+        view.addSubview(timeLabelStackView)
+        
     }
     
     @objc private func settingsButtonTapped() {
@@ -75,9 +93,9 @@ extension ViewController {
         ])
         
         NSLayoutConstraint.activate([
-            timeLabel.centerYAnchor.constraint(equalTo: goalImageView.centerYAnchor),
-            timeLabel.centerXAnchor.constraint(equalTo: goalImageView.centerXAnchor),
-            timeLabel.widthAnchor.constraint(equalToConstant: 140)
+            timeLabelStackView.centerYAnchor.constraint(equalTo: goalImageView.centerYAnchor),
+            timeLabelStackView.centerXAnchor.constraint(equalTo: goalImageView.centerXAnchor),
+            timeLabelStackView.widthAnchor.constraint(equalToConstant: 130)
         ])
     }
 }

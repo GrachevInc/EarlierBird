@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65104AE927C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
+		65104AEA27C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
+		65104AEB27C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
 		6589034727C753DC001A76B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589034627C753DC001A76B9 /* AppDelegate.swift */; };
 		6589034927C753DC001A76B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589034827C753DC001A76B9 /* SceneDelegate.swift */; };
 		6589034B27C753DC001A76B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589034A27C753DC001A76B9 /* ViewController.swift */; };
@@ -48,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65104AE827C97D6400926559 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		6589034327C753DC001A76B9 /* EarlierBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarlierBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6589034627C753DC001A76B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6589034827C753DC001A76B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				659768B627C7922E00D29318 /* Application */,
-				6589034A27C753DC001A76B9 /* ViewController.swift */,
+				65A34A8427C93AA900AF937E /* Views */,
+				65A34A8327C93A9A00AF937E /* Controllers */,
 				659768B827C7A4D600D29318 /* Extensions */,
 				659768B727C7925500D29318 /* Resources */,
 			);
@@ -165,6 +170,7 @@
 			children = (
 				659768B927C7A52000D29318 /* UIColor + Extensions.swift */,
 				659768C827C7AF4000D29318 /* UIFont + Extensions.swift */,
+				65104AE827C97D6400926559 /* UIStackView + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -177,6 +183,21 @@
 				659768BD27C7AE6600D29318 /* Roboto-Medium.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		65A34A8327C93A9A00AF937E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6589034A27C753DC001A76B9 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		65A34A8427C93AA900AF937E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6589034B27C753DC001A76B9 /* ViewController.swift in Sources */,
+				65104AE927C97D6400926559 /* UIStackView + Extensions.swift in Sources */,
 				659768BA27C7A52000D29318 /* UIColor + Extensions.swift in Sources */,
 				659768C927C7AF4000D29318 /* UIFont + Extensions.swift in Sources */,
 				6589034727C753DC001A76B9 /* AppDelegate.swift in Sources */,
@@ -331,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				659768CA27C7AF4000D29318 /* UIFont + Extensions.swift in Sources */,
+				65104AEA27C97D6400926559 /* UIStackView + Extensions.swift in Sources */,
 				6589035E27C753E2001A76B9 /* EarlierBirdTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +365,7 @@
 				659768CB27C7AF4000D29318 /* UIFont + Extensions.swift in Sources */,
 				6589036A27C753E2001A76B9 /* EarlierBirdUITestsLaunchTests.swift in Sources */,
 				6589036827C753E2001A76B9 /* EarlierBirdUITests.swift in Sources */,
+				65104AEB27C97D6400926559 /* UIStackView + Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
