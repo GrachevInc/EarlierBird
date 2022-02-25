@@ -10,9 +10,18 @@
 		65104AE927C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
 		65104AEA27C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
 		65104AEB27C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
+		65104AEE27C982BF00926559 /* TodayAlarmTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AED27C982BF00926559 /* TodayAlarmTimeView.swift */; };
+		65104AEF27C982BF00926559 /* TodayAlarmTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AED27C982BF00926559 /* TodayAlarmTimeView.swift */; };
+		65104AF027C982BF00926559 /* TodayAlarmTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AED27C982BF00926559 /* TodayAlarmTimeView.swift */; };
+		65104AF227C985F100926559 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AF127C985F100926559 /* UILabel + Extension.swift */; };
+		65104AF327C985F100926559 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AF127C985F100926559 /* UILabel + Extension.swift */; };
+		65104AF427C985F100926559 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AF127C985F100926559 /* UILabel + Extension.swift */; };
+		65104AF627C987C000926559 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AF527C987C000926559 /* UIView + Extensions.swift */; };
+		65104AF727C987C000926559 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AF527C987C000926559 /* UIView + Extensions.swift */; };
+		65104AF827C987C000926559 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AF527C987C000926559 /* UIView + Extensions.swift */; };
 		6589034727C753DC001A76B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589034627C753DC001A76B9 /* AppDelegate.swift */; };
 		6589034927C753DC001A76B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589034827C753DC001A76B9 /* SceneDelegate.swift */; };
-		6589034B27C753DC001A76B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589034A27C753DC001A76B9 /* ViewController.swift */; };
+		6589034B27C753DC001A76B9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589034A27C753DC001A76B9 /* MainViewController.swift */; };
 		6589035027C753E1001A76B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6589034F27C753E1001A76B9 /* Assets.xcassets */; };
 		6589035327C753E1001A76B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6589035127C753E1001A76B9 /* LaunchScreen.storyboard */; };
 		6589035E27C753E2001A76B9 /* EarlierBirdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589035D27C753E2001A76B9 /* EarlierBirdTests.swift */; };
@@ -52,10 +61,13 @@
 
 /* Begin PBXFileReference section */
 		65104AE827C97D6400926559 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
+		65104AED27C982BF00926559 /* TodayAlarmTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAlarmTimeView.swift; sourceTree = "<group>"; };
+		65104AF127C985F100926559 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		65104AF527C987C000926559 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		6589034327C753DC001A76B9 /* EarlierBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarlierBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6589034627C753DC001A76B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6589034827C753DC001A76B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6589034A27C753DC001A76B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6589034A27C753DC001A76B9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6589034F27C753E1001A76B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6589035227C753E1001A76B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6589035427C753E1001A76B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65104AEC27C9828700926559 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				65104AED27C982BF00926559 /* TodayAlarmTimeView.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
 		6589033A27C753DC001A76B9 = {
 			isa = PBXGroup;
 			children = (
@@ -169,8 +189,10 @@
 			isa = PBXGroup;
 			children = (
 				659768B927C7A52000D29318 /* UIColor + Extensions.swift */,
+				65104AF127C985F100926559 /* UILabel + Extension.swift */,
 				659768C827C7AF4000D29318 /* UIFont + Extensions.swift */,
 				65104AE827C97D6400926559 /* UIStackView + Extensions.swift */,
+				65104AF527C987C000926559 /* UIView + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -188,7 +210,7 @@
 		65A34A8327C93A9A00AF937E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6589034A27C753DC001A76B9 /* ViewController.swift */,
+				6589034A27C753DC001A76B9 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +218,7 @@
 		65A34A8427C93AA900AF937E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				65104AEC27C9828700926559 /* MainVC */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -339,12 +362,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6589034B27C753DC001A76B9 /* ViewController.swift in Sources */,
+				6589034B27C753DC001A76B9 /* MainViewController.swift in Sources */,
 				65104AE927C97D6400926559 /* UIStackView + Extensions.swift in Sources */,
+				65104AF227C985F100926559 /* UILabel + Extension.swift in Sources */,
 				659768BA27C7A52000D29318 /* UIColor + Extensions.swift in Sources */,
 				659768C927C7AF4000D29318 /* UIFont + Extensions.swift in Sources */,
 				6589034727C753DC001A76B9 /* AppDelegate.swift in Sources */,
 				6589034927C753DC001A76B9 /* SceneDelegate.swift in Sources */,
+				65104AF627C987C000926559 /* UIView + Extensions.swift in Sources */,
+				65104AEE27C982BF00926559 /* TodayAlarmTimeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,8 +379,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				659768CA27C7AF4000D29318 /* UIFont + Extensions.swift in Sources */,
+				65104AF327C985F100926559 /* UILabel + Extension.swift in Sources */,
 				65104AEA27C97D6400926559 /* UIStackView + Extensions.swift in Sources */,
 				6589035E27C753E2001A76B9 /* EarlierBirdTests.swift in Sources */,
+				65104AF727C987C000926559 /* UIView + Extensions.swift in Sources */,
+				65104AEF27C982BF00926559 /* TodayAlarmTimeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,10 +391,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65104AF827C987C000926559 /* UIView + Extensions.swift in Sources */,
+				65104AF427C985F100926559 /* UILabel + Extension.swift in Sources */,
 				659768CB27C7AF4000D29318 /* UIFont + Extensions.swift in Sources */,
 				6589036A27C753E2001A76B9 /* EarlierBirdUITestsLaunchTests.swift in Sources */,
 				6589036827C753E2001A76B9 /* EarlierBirdUITests.swift in Sources */,
 				65104AEB27C97D6400926559 /* UIStackView + Extensions.swift in Sources */,
+				65104AF027C982BF00926559 /* TodayAlarmTimeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

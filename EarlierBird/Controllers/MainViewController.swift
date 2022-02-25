@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     private let settingsButton: UIButton = {
         let button = UIButton()
@@ -47,6 +47,8 @@ class ViewController: UIViewController {
         return label
     }()
     
+    private let todayAlarmTimeView = TodayAlarmTimeView()
+    
     private var timeLabelStackView = UIStackView()
 
     override func viewDidLoad() {
@@ -66,6 +68,7 @@ class ViewController: UIViewController {
                                    axis: .vertical,
                                    spacing: -10)
         view.addSubview(timeLabelStackView)
+        view.addSubview(todayAlarmTimeView)
         
     }
     
@@ -77,7 +80,7 @@ class ViewController: UIViewController {
 
 //MARK: – setDelegates
 
-extension ViewController {
+extension MainViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             settingsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
@@ -96,6 +99,13 @@ extension ViewController {
             timeLabelStackView.centerYAnchor.constraint(equalTo: goalImageView.centerYAnchor),
             timeLabelStackView.centerXAnchor.constraint(equalTo: goalImageView.centerXAnchor),
             timeLabelStackView.widthAnchor.constraint(equalToConstant: 130)
+        ])
+        
+        NSLayoutConstraint.activate([
+            todayAlarmTimeView.topAnchor.constraint(equalTo: goalImageView.bottomAnchor, constant: 10),
+            todayAlarmTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            todayAlarmTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            todayAlarmTimeView.heightAnchor.constraint(equalToConstant: 130)
         ])
     }
 }
