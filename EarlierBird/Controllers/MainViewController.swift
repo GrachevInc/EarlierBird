@@ -103,14 +103,14 @@ extension MainViewController {
         ])
         
         NSLayoutConstraint.activate([
-            todayAlarmTimeView.topAnchor.constraint(equalTo: goalImageView.bottomAnchor, constant: 10),
+            todayAlarmTimeView.topAnchor.constraint(equalTo: goalImageView.bottomAnchor, constant: 20),
             todayAlarmTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             todayAlarmTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             todayAlarmTimeView.heightAnchor.constraint(equalToConstant: 130)
         ])
         
         NSLayoutConstraint.activate([
-            briefProgressStatisticView.topAnchor.constraint(equalTo: todayAlarmTimeView.bottomAnchor, constant: 10),
+            briefProgressStatisticView.topAnchor.constraint(equalTo: todayAlarmTimeView.bottomAnchor, constant: 20),
             briefProgressStatisticView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             briefProgressStatisticView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             briefProgressStatisticView.heightAnchor.constraint(equalToConstant: 130)

@@ -71,16 +71,6 @@ class BriefProgressStatisticView: UIView {
         
         textCalendarProgressLabel.numberOfLines = 3
         addSubview(textCalendarProgressLabel)
-        
-//        briefProgressViewStackView = UIStackView(arrangedSubviews: [startProgressImageView,
-//                                                                   briefProgressView,
-//                                                                   finishProgressImageView],
-//                                                 axis: .horizontal,
-//                                                 spacing: 10)
-//        startProgressImageView.frame.size = CGSize(width: 30,
-//                                                   height: 30)
-//        finishProgressImageView.frame.size = CGSize(width: 30, height: 30)
-//        addSubview(briefProgressViewStackView)
         addSubview(startProgressImageView)
         addSubview(briefProgressView)
         addSubview(finishProgressImageView)
@@ -99,13 +89,6 @@ class BriefProgressStatisticView: UIView {
             textCalendarProgressLabel.leadingAnchor.constraint(equalTo: calendarProgressImageView.trailingAnchor, constant: 20),
             textCalendarProgressLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40)
         ])
-        
-//        NSLayoutConstraint.activate([
-//            briefProgressViewStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-//            briefProgressViewStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-//            briefProgressViewStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-//            briefProgressViewStackView.heightAnchor.constraint(equalToConstant: 30)
-//        ])
         
         NSLayoutConstraint.activate([
             startProgressImageView.topAnchor.constraint(equalTo: calendarProgressImageView.bottomAnchor, constant: 15),
