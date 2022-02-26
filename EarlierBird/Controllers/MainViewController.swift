@@ -48,6 +48,7 @@ class MainViewController: UIViewController {
     }()
     
     private let todayAlarmTimeView = TodayAlarmTimeView()
+    private let briefProgressStatisticView = BriefProgressStatisticView()
     
     private var timeLabelStackView = UIStackView()
 
@@ -69,7 +70,7 @@ class MainViewController: UIViewController {
                                    spacing: -10)
         view.addSubview(timeLabelStackView)
         view.addSubview(todayAlarmTimeView)
-        
+        view.addSubview(briefProgressStatisticView)
     }
     
     @objc private func settingsButtonTapped() {
@@ -106,6 +107,13 @@ extension MainViewController {
             todayAlarmTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             todayAlarmTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             todayAlarmTimeView.heightAnchor.constraint(equalToConstant: 130)
+        ])
+        
+        NSLayoutConstraint.activate([
+            briefProgressStatisticView.topAnchor.constraint(equalTo: todayAlarmTimeView.bottomAnchor, constant: 10),
+            briefProgressStatisticView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            briefProgressStatisticView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            briefProgressStatisticView.heightAnchor.constraint(equalToConstant: 130)
         ])
     }
 }
