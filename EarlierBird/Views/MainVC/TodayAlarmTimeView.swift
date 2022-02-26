@@ -14,26 +14,14 @@ class TodayAlarmTimeView: UIView {
                                               font: .specialRobotoMedium14(),
                                               textColor: .white)
 
-    private let digitalDialFaceImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "digitalDialFace")
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    private let digitalDialFaceImageView: UIImageView = .createDefault(named: "digitalDialFace")
     
     private let timeTodayAlarmLabel = UILabel(text: "07:28",
                                               textAlignment: .center,
                                               font: .specialTimeFont30(),
                                               textColor: .specialBlue)
     
-    private let expectedWeatherImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "cloudy")
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    private let expectedWeatherImageView = UIImageView(defaultNamed: "cloudy")
     
     private let expectedWeatherLabel = UILabel(text: "Ожидается",
                                         textAlignment: .center,
