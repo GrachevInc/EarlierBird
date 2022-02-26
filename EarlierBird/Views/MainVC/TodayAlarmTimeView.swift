@@ -21,17 +21,7 @@ class TodayAlarmTimeView: UIView {
                                               font: .specialTimeFont30(),
                                               textColor: .specialBlue)
     
-    private let expectedWeatherImageView = UIImageView(defaultNamed: "cloudy")
     
-    private let expectedWeatherLabel = UILabel(text: "Ожидается",
-                                        textAlignment: .center,
-                                        font: .specialRobotoMedium14(),
-                                        textColor: .white)
-    
-    private let expectedWeatherDescriptionLabel = UILabel(text: "Дождь 5°С",
-                                                          textAlignment: .center,
-                                                          font: .specialRobotoMedium12(),
-                                                          textColor: .white)
     
     private let isOnAlarmSwitch: UISwitch = {
         let alarmSwitch = UISwitch()
@@ -44,8 +34,6 @@ class TodayAlarmTimeView: UIView {
         alarmSwitch.addTarget(self, action: #selector(isOnAlarmSwitched), for: .valueChanged)
         return alarmSwitch
     }()
-    
-    private var expectedWeatherTextStackView = UIStackView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,13 +55,6 @@ class TodayAlarmTimeView: UIView {
         addSubview(textTodayAlarmLabel)
         addSubview(digitalDialFaceImageView)
         addSubview(timeTodayAlarmLabel)
-        
-        expectedWeatherTextStackView = .init(arrangedSubviews: [expectedWeatherLabel,
-                                                                expectedWeatherDescriptionLabel],
-                                             axis: .vertical,
-                                             spacing: 0)
-        addSubview(expectedWeatherTextStackView)
-        addSubview(expectedWeatherImageView)
         addSubview(isOnAlarmSwitch)
         
     }
@@ -95,20 +76,6 @@ class TodayAlarmTimeView: UIView {
             timeTodayAlarmLabel.centerYAnchor.constraint(equalTo: digitalDialFaceImageView.centerYAnchor),
             timeTodayAlarmLabel.leadingAnchor.constraint(equalTo: digitalDialFaceImageView.leadingAnchor, constant: 10),
             timeTodayAlarmLabel.trailingAnchor.constraint(equalTo: digitalDialFaceImageView.trailingAnchor, constant: -10)
-        ])
-        
-        NSLayoutConstraint.activate([
-            expectedWeatherImageView.topAnchor.constraint(equalTo: textTodayAlarmLabel.bottomAnchor, constant: 8),
-            expectedWeatherImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            expectedWeatherImageView.trailingAnchor.constraint(equalTo: digitalDialFaceImageView.leadingAnchor, constant: -20),
-            expectedWeatherImageView.heightAnchor.constraint(equalToConstant: 60),
-            expectedWeatherImageView.widthAnchor.constraint(equalToConstant: 60)
-        ])
-        
-        NSLayoutConstraint.activate([
-            expectedWeatherTextStackView.topAnchor.constraint(equalTo: expectedWeatherImageView.bottomAnchor, constant: 0),
-            expectedWeatherTextStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            expectedWeatherTextStackView.trailingAnchor.constraint(equalTo: digitalDialFaceImageView.leadingAnchor, constant: -10)
         ])
         
         NSLayoutConstraint.activate([

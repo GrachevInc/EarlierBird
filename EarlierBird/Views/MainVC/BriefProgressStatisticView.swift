@@ -11,7 +11,7 @@ class BriefProgressStatisticView: UIView {
     
     private let calendarProgressImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "resultImage")
+        imageView.image = UIImage(named: "calendarBriefStatistic")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
