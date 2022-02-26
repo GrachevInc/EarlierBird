@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
         setConstraints()
     }
     
-    //MARK: – setupViews
+    // MARK: - setupViews
 
     private func setupViews() {
         view.backgroundColor = .specialBackground
@@ -70,7 +70,7 @@ class MainViewController: UIViewController {
 
 }
 
-//MARK: – setDelegates
+// MARK: - setConstraints
 
 extension MainViewController {
     private func setConstraints() {

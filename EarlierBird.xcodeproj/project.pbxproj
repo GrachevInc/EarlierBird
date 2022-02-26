@@ -19,6 +19,9 @@
 		650C583C27CA40BF00EAB8B9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C583B27CA40BF00EAB8B9 /* SettingsViewController.swift */; };
 		650C583D27CA40BF00EAB8B9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C583B27CA40BF00EAB8B9 /* SettingsViewController.swift */; };
 		650C583E27CA40BF00EAB8B9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C583B27CA40BF00EAB8B9 /* SettingsViewController.swift */; };
+		650C584027CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C583F27CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift */; };
+		650C584127CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C583F27CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift */; };
+		650C584227CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C583F27CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift */; };
 		65104AE927C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
 		65104AEA27C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
 		65104AEB27C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
@@ -76,6 +79,7 @@
 		650C583127CA200700EAB8B9 /* UIImageView+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Factory.swift"; sourceTree = "<group>"; };
 		650C583727CA3F6C00EAB8B9 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		650C583B27CA40BF00EAB8B9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		650C583F27CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayWakeUpView.swift; sourceTree = "<group>"; };
 		65104AE827C97D6400926559 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		65104AED27C982BF00926559 /* TodayAlarmTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAlarmTimeView.swift; sourceTree = "<group>"; };
 		65104AF127C985F100926559 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
@@ -124,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		650C584327CA5B9200EAB8B9 /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				650C583F27CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift */,
+			);
+			path = SettingsVC;
+			sourceTree = "<group>";
+		};
 		65104AEC27C9828700926559 /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				65104AEC27C9828700926559 /* MainVC */,
+				650C584327CA5B9200EAB8B9 /* SettingsVC */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +397,7 @@
 			files = (
 				6589034B27C753DC001A76B9 /* MainViewController.swift in Sources */,
 				65104AE927C97D6400926559 /* UIStackView + Extensions.swift in Sources */,
+				650C584027CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift in Sources */,
 				65104AF227C985F100926559 /* UILabel + Extension.swift in Sources */,
 				659768BA27C7A52000D29318 /* UIColor + Extensions.swift in Sources */,
 				650C582E27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift in Sources */,
@@ -410,6 +424,7 @@
 				6589035E27C753E2001A76B9 /* EarlierBirdTests.swift in Sources */,
 				65104AF727C987C000926559 /* UIView + Extensions.swift in Sources */,
 				650C582F27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift in Sources */,
+				650C584127CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift in Sources */,
 				65104AEF27C982BF00926559 /* TodayAlarmTimeView.swift in Sources */,
 				650C583927CA3F6C00EAB8B9 /* MainTabViewController.swift in Sources */,
 			);
@@ -423,6 +438,7 @@
 				65104AF427C985F100926559 /* UILabel + Extension.swift in Sources */,
 				650C583E27CA40BF00EAB8B9 /* SettingsViewController.swift in Sources */,
 				659768CB27C7AF4000D29318 /* UIFont + Extensions.swift in Sources */,
+				650C584227CA5B8D00EAB8B9 /* SetTodayWakeUpView.swift in Sources */,
 				6589036A27C753E2001A76B9 /* EarlierBirdUITestsLaunchTests.swift in Sources */,
 				650C583427CA200700EAB8B9 /* UIImageView+Factory.swift in Sources */,
 				650C583A27CA3F6C00EAB8B9 /* MainTabViewController.swift in Sources */,
