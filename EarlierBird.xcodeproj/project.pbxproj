@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650C582E27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C582D27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift */; };
+		650C582F27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C582D27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift */; };
+		650C583027C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C582D27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift */; };
 		65104AE927C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
 		65104AEA27C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
 		65104AEB27C97D6400926559 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104AE827C97D6400926559 /* UIStackView + Extensions.swift */; };
@@ -60,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		650C582D27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefProgressStatisticView.swift; sourceTree = "<group>"; };
 		65104AE827C97D6400926559 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		65104AED27C982BF00926559 /* TodayAlarmTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAlarmTimeView.swift; sourceTree = "<group>"; };
 		65104AF127C985F100926559 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				65104AED27C982BF00926559 /* TodayAlarmTimeView.swift */,
+				650C582D27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				65104AE927C97D6400926559 /* UIStackView + Extensions.swift in Sources */,
 				65104AF227C985F100926559 /* UILabel + Extension.swift in Sources */,
 				659768BA27C7A52000D29318 /* UIColor + Extensions.swift in Sources */,
+				650C582E27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift in Sources */,
 				659768C927C7AF4000D29318 /* UIFont + Extensions.swift in Sources */,
 				6589034727C753DC001A76B9 /* AppDelegate.swift in Sources */,
 				6589034927C753DC001A76B9 /* SceneDelegate.swift in Sources */,
@@ -383,6 +389,7 @@
 				65104AEA27C97D6400926559 /* UIStackView + Extensions.swift in Sources */,
 				6589035E27C753E2001A76B9 /* EarlierBirdTests.swift in Sources */,
 				65104AF727C987C000926559 /* UIView + Extensions.swift in Sources */,
+				650C582F27C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift in Sources */,
 				65104AEF27C982BF00926559 /* TodayAlarmTimeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +402,7 @@
 				65104AF427C985F100926559 /* UILabel + Extension.swift in Sources */,
 				659768CB27C7AF4000D29318 /* UIFont + Extensions.swift in Sources */,
 				6589036A27C753E2001A76B9 /* EarlierBirdUITestsLaunchTests.swift in Sources */,
+				650C583027C9FF8E00EAB8B9 /* BriefProgressStatisticView.swift in Sources */,
 				6589036827C753E2001A76B9 /* EarlierBirdUITests.swift in Sources */,
 				65104AEB27C97D6400926559 /* UIStackView + Extensions.swift in Sources */,
 				65104AF027C982BF00926559 /* TodayAlarmTimeView.swift in Sources */,
