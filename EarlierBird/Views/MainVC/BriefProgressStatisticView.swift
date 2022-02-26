@@ -22,6 +22,36 @@ class BriefProgressStatisticView: UIView {
                                               font: .specialRobotoMedium14(),
                                               textColor: .white)
     
+    private let briefProgressView: UIProgressView = {
+        let progressView = UIProgressView(progressViewStyle: .bar)
+        progressView.trackTintColor = .specialRed
+        progressView.progressTintColor = .specialPink
+        progressView.setProgress(0.3, animated: true)
+        progressView.layer.sublayers?[1].cornerRadius = 10
+        progressView.subviews[1].clipsToBounds = true
+        progressView.layer.cornerRadius = 10
+        progressView.clipsToBounds = true
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        return progressView
+    }()
+    
+    private let startProgressImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "startImage")
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private let finishProgressImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "finishImage")
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private var briefProgressViewStackView = UIStackView()
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,6 +71,19 @@ class BriefProgressStatisticView: UIView {
         
         textCalendarProgressLabel.numberOfLines = 3
         addSubview(textCalendarProgressLabel)
+        
+//        briefProgressViewStackView = UIStackView(arrangedSubviews: [startProgressImageView,
+//                                                                   briefProgressView,
+//                                                                   finishProgressImageView],
+//                                                 axis: .horizontal,
+//                                                 spacing: 10)
+//        startProgressImageView.frame.size = CGSize(width: 30,
+//                                                   height: 30)
+//        finishProgressImageView.frame.size = CGSize(width: 30, height: 30)
+//        addSubview(briefProgressViewStackView)
+        addSubview(startProgressImageView)
+        addSubview(briefProgressView)
+        addSubview(finishProgressImageView)
     }
     
     private func setConstraints() {
@@ -53,8 +96,36 @@ class BriefProgressStatisticView: UIView {
         
         NSLayoutConstraint.activate([
             textCalendarProgressLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            textCalendarProgressLabel.leadingAnchor.constraint(equalTo: calendarProgressImageView.trailingAnchor, constant: 10),
+            textCalendarProgressLabel.leadingAnchor.constraint(equalTo: calendarProgressImageView.trailingAnchor, constant: 20),
             textCalendarProgressLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40)
+        ])
+        
+//        NSLayoutConstraint.activate([
+//            briefProgressViewStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+//            briefProgressViewStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+//            briefProgressViewStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+//            briefProgressViewStackView.heightAnchor.constraint(equalToConstant: 30)
+//        ])
+        
+        NSLayoutConstraint.activate([
+            startProgressImageView.topAnchor.constraint(equalTo: calendarProgressImageView.bottomAnchor, constant: 15),
+            startProgressImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            startProgressImageView.heightAnchor.constraint(equalToConstant: 30),
+            startProgressImageView.widthAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
+            finishProgressImageView.topAnchor.constraint(equalTo: calendarProgressImageView.bottomAnchor, constant: 15),
+            finishProgressImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            finishProgressImageView.heightAnchor.constraint(equalToConstant: 30),
+            finishProgressImageView.widthAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
+            briefProgressView.centerYAnchor.constraint(equalTo: startProgressImageView.centerYAnchor),
+            briefProgressView.leadingAnchor.constraint(equalTo: startProgressImageView.trailingAnchor, constant: 10),
+            briefProgressView.trailingAnchor.constraint(equalTo: finishProgressImageView.leadingAnchor, constant: -10),
+            briefProgressView.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
 }
