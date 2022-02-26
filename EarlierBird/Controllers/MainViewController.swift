@@ -9,14 +9,6 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    private let settingsButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "settings"), for: .normal)
-        button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     private let goalImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "goal")
@@ -63,7 +55,6 @@ class MainViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .specialBackground
         view.addSubview(goalImageView)
-        view.addSubview(settingsButton)
         
         timeLabelStackView = .init(arrangedSubviews: [textTimeLabel, timeLabel],
                                    axis: .vertical,
@@ -83,12 +74,6 @@ class MainViewController: UIViewController {
 
 extension MainViewController {
     private func setConstraints() {
-        NSLayoutConstraint.activate([
-            settingsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            settingsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            settingsButton.heightAnchor.constraint(equalToConstant: 60),
-            settingsButton.widthAnchor.constraint(equalToConstant: 60)
-        ])
         
         NSLayoutConstraint.activate([
             goalImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
