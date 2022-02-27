@@ -9,9 +9,9 @@ import UIKit
 
 class TodayAlarmTimeView: UIView {
     
-    private let textTodayAlarmLabel = UILabel(text: "Сегодня будильник установлен на",
+    private let textTodayAlarmLabel = UILabel(text: "Будильник сегодня",
                                               textAlignment: .center,
-                                              font: .specialRobotoMedium14(),
+                                              font: .specialRobotoBold16(),
                                               textColor: .white)
 
     private let digitalDialFaceImageView: UIImageView = .createDefault(named: "digitalDialFace")
@@ -49,6 +49,8 @@ class TodayAlarmTimeView: UIView {
         print("Switcher works")
     }
     
+    // MARK: - setupViews
+    
     private func setupViews() {
         setStandartViewSettings()
         addShadowOnView()
@@ -58,6 +60,8 @@ class TodayAlarmTimeView: UIView {
         addSubview(isOnAlarmSwitch)
         
     }
+    
+    // MARK: - setConstraints
     
     private func setConstraints() {
         NSLayoutConstraint.activate([

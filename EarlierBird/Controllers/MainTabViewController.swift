@@ -35,8 +35,8 @@ class MainTabViewController: UITabBarController {
         
         items[0].title = "Main"
         items[1].title = "Settings"
-        items[0].titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 7)
-        items[1].titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 7)
+        items[0].titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 0)
+        items[1].titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 0)
 
         
         items[0].image = UIImage(systemName: "clock.arrow.2.circlepath")

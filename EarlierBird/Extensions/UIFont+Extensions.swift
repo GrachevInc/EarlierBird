@@ -20,6 +20,14 @@ extension UIFont {
         UIFont.init(name: "Roboto-Bold", size: 16)
     }
     
+    static func specialRobotoBold18() -> UIFont? {
+        UIFont.init(name: "Roboto-Bold", size: 18)
+    }
+    
+    static func specialRobotoBold20() -> UIFont? {
+        UIFont.init(name: "Roboto-Bold", size: 20)
+    }
+    
     static func specialRobotoBold24() -> UIFont? {
         UIFont.init(name: "Roboto-Bold", size: 24)
     }

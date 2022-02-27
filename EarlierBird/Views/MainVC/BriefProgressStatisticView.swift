@@ -50,8 +50,6 @@ class BriefProgressStatisticView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
-    private var briefProgressViewStackView = UIStackView()
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,6 +60,8 @@ class BriefProgressStatisticView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - setupViews
     
     private func setupViews() {
         setStandartViewSettings()
@@ -75,6 +75,8 @@ class BriefProgressStatisticView: UIView {
         addSubview(briefProgressView)
         addSubview(finishProgressImageView)
     }
+    
+    // MARK: - setConstraints
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
@@ -108,7 +110,7 @@ class BriefProgressStatisticView: UIView {
             briefProgressView.centerYAnchor.constraint(equalTo: startProgressImageView.centerYAnchor),
             briefProgressView.leadingAnchor.constraint(equalTo: startProgressImageView.trailingAnchor, constant: 10),
             briefProgressView.trailingAnchor.constraint(equalTo: finishProgressImageView.leadingAnchor, constant: -10),
-            briefProgressView.heightAnchor.constraint(equalToConstant: 20)
+            briefProgressView.heightAnchor.constraint(equalToConstant: Constants.ProgressView.progressBarHeight)
         ])
     }
 }
