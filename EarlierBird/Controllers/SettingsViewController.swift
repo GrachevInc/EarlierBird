@@ -34,21 +34,21 @@ class SettingsViewController: UIViewController {
                                                   font: .specialRobotoBold18(),
                                                   textColor: .white)
     
-    private let setTodayTimeWakeUpButton: UIButton = .createDefaultTimeButton(image: "digitalDialFace",
+    private lazy var setTodayTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFace",
                                                                               setTitle: "08:43",
-                                                                              font: .specialTimeFont30())
+                                                                                    font: .specialTimeFont30(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
-    private let setGoalTimeWakeUpButton: UIButton = .createDefaultTimeButton(image: "digitalDialFaceTarget",
+    private lazy var setGoalTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceTarget",
                                                                              setTitle: "06:00",
-                                                                             font: .specialTimeFont30())
+                                                                             font: .specialTimeFont30(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
-    private let setIntervalWakeUpButton: UIButton = .createDefaultTimeButton(image: "digitalDialFaceInterval",
+    private lazy var setIntervalWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceInterval",
                                                                              setTitle: "5 мин. 20 сек.",
-                                                                             font: .specialRobotoBold18())
+                                                                             font: .specialRobotoBold18(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
-    private let setDateWakeUpButton: UIButton = .createDefaultTimeButton(image: "digitalDialFaceDate",
+    private lazy var setDateWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceDate",
                                                                          setTitle: "25.05.2022",
-                                                                         font: .specialRobotoBold20())
+                                                                         font: .specialRobotoBold20(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
 //    private let notificationButton: UIButton = {
 //        let button = UIButton(type: .system)
@@ -80,6 +80,52 @@ class SettingsViewController: UIViewController {
         setConstraints()
     }
     
+    // MARK: - setupViews
+
+    private func setupViews() {
+        view.backgroundColor = .specialBackground
+        view.addSubview(screenSettingsNameLabel)
+        
+        todayButtonStackView = UIStackView(arrangedSubviews: [todayTimeWakeUpTextLabel, setTodayTimeWakeUpButton],
+                                           axis: .vertical,
+                                           spacing: Constants.SettingsController.spacingVerticalStackView)
+        
+        goalButtonStackView = UIStackView(arrangedSubviews: [goalTimeWakeUpTextLabel, setGoalTimeWakeUpButton],
+                                           axis: .vertical,
+                                           spacing: Constants.SettingsController.spacingVerticalStackView)
+        
+        firstHorizontalStackView = UIStackView(arrangedSubviews: [todayButtonStackView, goalButtonStackView],
+                                               axis: .horizontal,
+                                               spacing: Constants.SettingsController.spacingHorizontalStackView)
+        
+        
+        intervalButtonStackView = UIStackView(arrangedSubviews: [intervalTimeWakeUpTextLabel, setIntervalWakeUpButton],
+                                           axis: .vertical,
+                                           spacing: Constants.SettingsController.spacingVerticalStackView)
+        
+        dateButtonStackView = UIStackView(arrangedSubviews: [dateTimeWakeUpTextLabel, setDateWakeUpButton],
+                                          axis: .vertical,
+                                          spacing: Constants.SettingsController.spacingVerticalStackView)
+        
+        secondHorizontalStackView = UIStackView(arrangedSubviews: [intervalButtonStackView, dateButtonStackView],
+                                                axis: .horizontal,
+                                                spacing: Constants.SettingsController.spacingHorizontalStackView)
+        
+        
+        generalGoalStackView = UIStackView(arrangedSubviews: [firstHorizontalStackView,
+                                                              secondHorizontalStackView],
+                                           axis: .vertical,
+                                           spacing: Constants.SettingsController.spacingGeneralStackView)
+        generalGoalStackView.layer.cornerRadius = Constants.CornerRadius.defaultCornerRadius
+        view.addSubview(generalGoalStackView)
+    
+//        view.addSubview(notificationButton)
+    }
+}
+
+// MARK: - @objc func
+
+extension SettingsViewController {
     @objc private func setTodayTimeWakeUpButtonTapped() {
         print("setTodayTimeWakeUpButtonTapped")
     }
@@ -98,53 +144,6 @@ class SettingsViewController: UIViewController {
     
     @objc private func notificationButtonTapped() {
         print("notificationButtonTapped")
-        
-    }
-    
-    // MARK: - setupViews
-
-    private func setupViews() {
-        view.backgroundColor = .specialBackground
-        view.addSubview(screenSettingsNameLabel)
-        
-        todayButtonStackView = UIStackView(arrangedSubviews: [todayTimeWakeUpTextLabel, setTodayTimeWakeUpButton],
-                                           axis: .vertical,
-                                           spacing: 5)
-        
-        goalButtonStackView = UIStackView(arrangedSubviews: [goalTimeWakeUpTextLabel, setGoalTimeWakeUpButton],
-                                           axis: .vertical,
-                                           spacing: 5)
-        
-        firstHorizontalStackView = UIStackView(arrangedSubviews: [todayButtonStackView, goalButtonStackView],
-                                               axis: .horizontal,
-                                               spacing: 10)
-        
-        
-        intervalButtonStackView = UIStackView(arrangedSubviews: [intervalTimeWakeUpTextLabel, setIntervalWakeUpButton],
-                                           axis: .vertical,
-                                           spacing: 5)
-        
-        dateButtonStackView = UIStackView(arrangedSubviews: [dateTimeWakeUpTextLabel, setDateWakeUpButton],
-                                          axis: .vertical,
-                                          spacing: 5)
-        
-        secondHorizontalStackView = UIStackView(arrangedSubviews: [intervalButtonStackView, dateButtonStackView],
-                                                axis: .horizontal,
-                                                spacing: 10)
-        
-        
-        generalGoalStackView = UIStackView(arrangedSubviews: [firstHorizontalStackView,
-                                                              secondHorizontalStackView],
-                                           axis: .vertical,
-                                           spacing: 10)
-        view.addSubview(generalGoalStackView)
-        
-        setTodayTimeWakeUpButton.addTarget(self, action: #selector(setTodayTimeWakeUpButtonTapped), for: .touchUpInside)
-        setGoalTimeWakeUpButton.addTarget(self, action: #selector(setGoalTimeWakeUpButtonTapped), for: .touchUpInside)
-        setIntervalWakeUpButton.addTarget(self, action: #selector(setIntervalWakeUpButtonTapped), for: .touchUpInside)
-        setDateWakeUpButton.addTarget(self, action: #selector(setIntervalWakeUpButtonTapped), for: .touchUpInside)
-        
-//        view.addSubview(notificationButton)
     }
 }
 
@@ -153,23 +152,27 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            screenSettingsNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            screenSettingsNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                                         constant: Constants.ContraintsSize.defaultDistanceToTopSafeAreaEdge),
             screenSettingsNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            generalGoalStackView.topAnchor.constraint(equalTo: screenSettingsNameLabel.bottomAnchor, constant: 20),
+            generalGoalStackView.topAnchor.constraint(equalTo: screenSettingsNameLabel.bottomAnchor,
+                                                      constant: Constants.ContraintsSize.defaultDistanceBetweenViews),
             generalGoalStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            generalGoalStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            generalGoalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            generalGoalStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                          constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            generalGoalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                           constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
-        NSLayoutConstraint.activate([
+//        NSLayoutConstraint.activate([
 //            notificationButton.topAnchor.constraint(equalTo: generalGoalStackView.bottomAnchor, constant: 10),
 //            notificationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
 //            notificationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 //            notificationButton.heightAnchor.constraint(equalToConstant: 120),
 //            notificationButton.widthAnchor.constraint(equalToConstant: 200)
-        ])
+//        ])
     }
 }

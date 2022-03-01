@@ -11,7 +11,7 @@ class TodayAlarmTimeView: UIView {
     
     private let textTodayAlarmLabel = UILabel(text: "Будильник сегодня",
                                               textAlignment: .center,
-                                              font: .specialRobotoBold16(),
+                                              font: .specialRobotoBold18(),
                                               textColor: .white)
 
     private let digitalDialFaceImageView: UIImageView = .createDefault(named: "digitalDialFace")
@@ -45,10 +45,6 @@ class TodayAlarmTimeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc private func isOnAlarmSwitched() {
-        print("Switcher works")
-    }
-    
     // MARK: - setupViews
     
     private func setupViews() {
@@ -60,32 +56,48 @@ class TodayAlarmTimeView: UIView {
         addSubview(isOnAlarmSwitch)
         
     }
-    
-    // MARK: - setConstraints
+}
+
+// MARK: - @objc func
+
+extension TodayAlarmTimeView {
+
+    @objc private func isOnAlarmSwitched() {
+        print("Switcher works")
+    }
+}
+
+// MARK: - setConstraints
+
+extension TodayAlarmTimeView {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            textTodayAlarmLabel.topAnchor.constraint(equalTo: topAnchor, constant: 3),
-            textTodayAlarmLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            textTodayAlarmLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            textTodayAlarmLabel.topAnchor.constraint(equalTo: topAnchor,
+                                                     constant: Constants.ContraintsSize.defaultDistanceToTopEdge),
+            textTodayAlarmLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            textTodayAlarmLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
         NSLayoutConstraint.activate([
-            digitalDialFaceImageView.topAnchor.constraint(equalTo: textTodayAlarmLabel.bottomAnchor, constant: 3),
+            digitalDialFaceImageView.topAnchor.constraint(equalTo: textTodayAlarmLabel.bottomAnchor,
+                                                          constant: Constants.TodayAlarmView.digitalDialFaceIconToTopEdge),
             digitalDialFaceImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            digitalDialFaceImageView.heightAnchor.constraint(equalToConstant: 100)
+            digitalDialFaceImageView.heightAnchor.constraint(equalToConstant: Constants.TodayAlarmView.digitalDialFaceIconHeight)
         ])
         
         NSLayoutConstraint.activate([
             timeTodayAlarmLabel.centerYAnchor.constraint(equalTo: digitalDialFaceImageView.centerYAnchor),
-            timeTodayAlarmLabel.leadingAnchor.constraint(equalTo: digitalDialFaceImageView.leadingAnchor, constant: 10),
-            timeTodayAlarmLabel.trailingAnchor.constraint(equalTo: digitalDialFaceImageView.trailingAnchor, constant: -10)
+            timeTodayAlarmLabel.leadingAnchor.constraint(equalTo: digitalDialFaceImageView.leadingAnchor,
+                                                         constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            timeTodayAlarmLabel.trailingAnchor.constraint(equalTo: digitalDialFaceImageView.trailingAnchor,
+                                                          constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
         NSLayoutConstraint.activate([
             isOnAlarmSwitch.centerYAnchor.constraint(equalTo: digitalDialFaceImageView.centerYAnchor),
-            isOnAlarmSwitch.leadingAnchor.constraint(equalTo: digitalDialFaceImageView.trailingAnchor, constant: 20)
+            isOnAlarmSwitch.leadingAnchor.constraint(equalTo: digitalDialFaceImageView.trailingAnchor,
+                                                     constant: Constants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
     }
-    
 }

@@ -13,7 +13,6 @@ class MainTabViewController: UITabBarController {
         super.viewDidLoad()
         setupTabBar()
         setupItems()
-        
     }
     
     private func setupTabBar() {
@@ -22,7 +21,6 @@ class MainTabViewController: UITabBarController {
         tabBar.unselectedItemTintColor = .specialBackground
         tabBar.layer.borderColor = UIColor.specialBlue.cgColor
         tabBar.layer.borderWidth = 1
-        
     }
 
     private func setupItems() {
@@ -33,15 +31,11 @@ class MainTabViewController: UITabBarController {
         
         guard let items = tabBar.items else { return }
         
-        items[0].title = "Main"
-        items[1].title = "Settings"
-        items[0].titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 0)
-        items[1].titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 0)
-
+        items[0].title = "Главная"
+        items[1].title = "Настройки"
         
         items[0].image = UIImage(systemName: "clock.arrow.2.circlepath")
         items[1].image = UIImage(systemName: "gearshape")
-        
         
         UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont.specialRobotoMedium14() as Any], for: .normal)
     }

@@ -19,7 +19,7 @@ class BriefProgressStatisticView: UIView {
     
     private let textCalendarProgressLabel = UILabel(text: "До результата осталось 14 дней. Каждый день ты просыпаешься на 4 минуты раньше",
                                               textAlignment: .left,
-                                              font: .specialRobotoMedium14(),
+                                              font: .specialRobotoMedium16(),
                                               textColor: .white)
     
     private let briefProgressView: UIProgressView = {
@@ -80,37 +80,46 @@ class BriefProgressStatisticView: UIView {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            calendarProgressImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            calendarProgressImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            calendarProgressImageView.widthAnchor.constraint(equalToConstant: 60),
-            calendarProgressImageView.heightAnchor.constraint(equalToConstant: 60)
+            calendarProgressImageView.topAnchor.constraint(equalTo: topAnchor,
+                                                           constant: Constants.ProgressView.calendarIconDistanceToTopEdge),
+            calendarProgressImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            calendarProgressImageView.widthAnchor.constraint(equalToConstant: Constants.ProgressView.calendarIconHeightWidth),
+            calendarProgressImageView.heightAnchor.constraint(equalToConstant: Constants.ProgressView.calendarIconHeightWidth)
         ])
         
         NSLayoutConstraint.activate([
-            textCalendarProgressLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            textCalendarProgressLabel.leadingAnchor.constraint(equalTo: calendarProgressImageView.trailingAnchor, constant: 20),
-            textCalendarProgressLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40)
+            textCalendarProgressLabel.topAnchor.constraint(equalTo: topAnchor,
+                                                           constant: Constants.ProgressView.textDistanceToTopEdge),
+            textCalendarProgressLabel.leadingAnchor.constraint(equalTo: calendarProgressImageView.trailingAnchor,
+                                                               constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            textCalendarProgressLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                                constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
         NSLayoutConstraint.activate([
-            startProgressImageView.topAnchor.constraint(equalTo: calendarProgressImageView.bottomAnchor, constant: 15),
-            startProgressImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            startProgressImageView.heightAnchor.constraint(equalToConstant: 30),
-            startProgressImageView.widthAnchor.constraint(equalToConstant: 30)
+            briefProgressView.heightAnchor.constraint(equalToConstant: Constants.ProgressView.progressViewHeight),
+            briefProgressView.topAnchor.constraint(equalTo: textCalendarProgressLabel.bottomAnchor,
+                                                   constant: Constants.ProgressView.progressViewDistanceToTopEdge),
+            briefProgressView.leadingAnchor.constraint(equalTo: startProgressImageView.trailingAnchor,
+                                                       constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            briefProgressView.trailingAnchor.constraint(equalTo: finishProgressImageView.leadingAnchor,
+                                                        constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
         NSLayoutConstraint.activate([
-            finishProgressImageView.topAnchor.constraint(equalTo: calendarProgressImageView.bottomAnchor, constant: 15),
-            finishProgressImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            finishProgressImageView.heightAnchor.constraint(equalToConstant: 30),
-            finishProgressImageView.widthAnchor.constraint(equalToConstant: 30)
+            startProgressImageView.centerYAnchor.constraint(equalTo: briefProgressView.centerYAnchor),
+            startProgressImageView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                            constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            startProgressImageView.heightAnchor.constraint(equalToConstant: Constants.ProgressView.progressIconsHeightWidth),
+            startProgressImageView.widthAnchor.constraint(equalToConstant: Constants.ProgressView.progressIconsHeightWidth)
         ])
         
         NSLayoutConstraint.activate([
-            briefProgressView.centerYAnchor.constraint(equalTo: startProgressImageView.centerYAnchor),
-            briefProgressView.leadingAnchor.constraint(equalTo: startProgressImageView.trailingAnchor, constant: 10),
-            briefProgressView.trailingAnchor.constraint(equalTo: finishProgressImageView.leadingAnchor, constant: -10),
-            briefProgressView.heightAnchor.constraint(equalToConstant: Constants.ProgressView.progressBarHeight)
+            finishProgressImageView.centerYAnchor.constraint(equalTo: briefProgressView.centerYAnchor),
+            finishProgressImageView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                              constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            finishProgressImageView.heightAnchor.constraint(equalToConstant: Constants.ProgressView.progressIconsHeightWidth),
+            finishProgressImageView.widthAnchor.constraint(equalToConstant: Constants.ProgressView.progressIconsHeightWidth)
         ])
     }
 }
