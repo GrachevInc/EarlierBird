@@ -45,6 +45,4 @@ enum Constants {
     enum CornerRadius {
         static let defaultCornerRadius: CGFloat = 10
     }
-    
-    
 }

@@ -34,21 +34,28 @@ class SettingsViewController: UIViewController {
                                                   font: .specialRobotoBold18(),
                                                   textColor: .white)
     
-    private lazy var setTodayTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFace",
+    private var setTodayTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFace",
                                                                               setTitle: "08:43",
                                                                                     font: .specialTimeFont30(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
-    private lazy var setGoalTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceTarget",
+    private var setGoalTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceTarget",
                                                                              setTitle: "06:00",
                                                                              font: .specialTimeFont30(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
-    private lazy var setIntervalWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceInterval",
+    private var setIntervalWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceInterval",
                                                                              setTitle: "5 мин. 20 сек.",
                                                                              font: .specialRobotoBold18(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
-    private lazy var setDateWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceDate",
+    private var setDateWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceDate",
                                                                          setTitle: "25.05.2022",
                                                                          font: .specialRobotoBold20(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
+    
+    private var notificationButton: UIButton = {.createDefaultButton(image: "notificationButton",
+                                                                     setTitle: "Включить уведомления",
+                                                                     target: self,
+                                                                     action: #selector(notificationButtonTapped))
+        
+    }()
     
 //    private let notificationButton: UIButton = {
 //        let button = UIButton(type: .system)
@@ -119,7 +126,7 @@ class SettingsViewController: UIViewController {
         generalGoalStackView.layer.cornerRadius = Constants.CornerRadius.defaultCornerRadius
         view.addSubview(generalGoalStackView)
     
-//        view.addSubview(notificationButton)
+        view.addSubview(notificationButton)
     }
 }
 
@@ -167,12 +174,12 @@ extension SettingsViewController {
                                                            constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
-//        NSLayoutConstraint.activate([
-//            notificationButton.topAnchor.constraint(equalTo: generalGoalStackView.bottomAnchor, constant: 10),
-//            notificationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-//            notificationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-//            notificationButton.heightAnchor.constraint(equalToConstant: 120),
-//            notificationButton.widthAnchor.constraint(equalToConstant: 200)
-//        ])
+        NSLayoutConstraint.activate([
+            notificationButton.topAnchor.constraint(equalTo: generalGoalStackView.bottomAnchor, constant: 10),
+            notificationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            notificationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            notificationButton.heightAnchor.constraint(equalToConstant: 50),
+            notificationButton.widthAnchor.constraint(equalToConstant: 30)
+        ])
     }
 }

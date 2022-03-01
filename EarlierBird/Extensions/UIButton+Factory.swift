@@ -24,4 +24,31 @@ extension UIButton {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }
+    
+    static func createDefaultButton(image imageName: String,
+                                        setTitle title: String,
+                                        target: Any?,
+                                        action: Selector) -> UIButton {
+        
+        let button = UIButton(type: .system)
+        button.tintColor = .specialGreen
+        button.backgroundColor = .specialGreen
+        button.setTitle(title,
+                        for: .normal)
+        button.setTitleColor(.specialBlue,
+                             for: .normal)
+        button.titleLabel?.font = .specialRobotoMedium16()
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.minimumScaleFactor = 0.7
+        button.setImage(UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal),
+                        for: .normal)
+        button.addTarget(target,
+                         action: action,
+                         for: .touchUpInside)
+        button.layer.cornerRadius = Constants.CornerRadius.defaultCornerRadius
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addShadowOnView()
+        return button
+    }
 }
+
