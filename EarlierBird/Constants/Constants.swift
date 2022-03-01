@@ -30,8 +30,9 @@ enum Constants {
     
     enum SettingsController {
         static let spacingHorizontalStackView: CGFloat = 10
-        static let spacingVerticalStackView: CGFloat = 10
+        static let spacingVerticalStackView: CGFloat = 5
         static let spacingGeneralStackView: CGFloat = 10
+        static let notificationButtonHeight: CGFloat = 45
     }
     
     enum ContraintsSize {

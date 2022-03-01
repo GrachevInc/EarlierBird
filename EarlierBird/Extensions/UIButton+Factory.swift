@@ -35,7 +35,7 @@ extension UIButton {
         button.backgroundColor = .specialGreen
         button.setTitle(title,
                         for: .normal)
-        button.setTitleColor(.specialBlue,
+        button.setTitleColor(.white,
                              for: .normal)
         button.titleLabel?.font = .specialRobotoMedium16()
         button.titleLabel?.adjustsFontSizeToFitWidth = true

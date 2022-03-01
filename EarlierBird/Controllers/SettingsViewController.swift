@@ -175,11 +175,11 @@ extension SettingsViewController {
         ])
         
         NSLayoutConstraint.activate([
-            notificationButton.topAnchor.constraint(equalTo: generalGoalStackView.bottomAnchor, constant: 10),
-            notificationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            notificationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            notificationButton.heightAnchor.constraint(equalToConstant: 50),
-            notificationButton.widthAnchor.constraint(equalToConstant: 30)
+            notificationButton.topAnchor.constraint(equalTo: generalGoalStackView.bottomAnchor,
+                                                    constant: Constants.ContraintsSize.defaultDistanceBetweenViews),
+            notificationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            notificationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            notificationButton.heightAnchor.constraint(equalToConstant: Constants.SettingsController.notificationButtonHeight)
         ])
     }
 }
