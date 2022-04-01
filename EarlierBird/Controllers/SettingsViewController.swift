@@ -34,23 +34,23 @@ class SettingsViewController: UIViewController {
                                                   font: .specialRobotoBold18(),
                                                   textColor: .white)
     
-    private var setTodayTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFace",
+    private lazy var setTodayTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFace",
                                                                               setTitle: "08:43",
                                                                                     font: .specialTimeFont30(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
-    private var setGoalTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceTarget",
+    private lazy var setGoalTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceTarget",
                                                                              setTitle: "06:00",
                                                                              font: .specialTimeFont30(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
-    private var setIntervalWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceInterval",
+    private lazy var setIntervalWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceInterval",
                                                                              setTitle: "5 мин. 20 сек.",
                                                                              font: .specialRobotoBold18(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
-    private var setDateWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceDate",
+    private lazy var setDateWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFaceDate",
                                                                          setTitle: "25.05.2022",
                                                                          font: .specialRobotoBold20(), target: self, action: #selector(setTodayTimeWakeUpButtonTapped))}()
     
-    private var notificationButton: UIButton = {.createDefaultButton(image: "notificationButton",
+    private lazy var notificationButton: UIButton = {.createDefaultButton(image: "notificationButton",
                                                                      setTitle: "Включить уведомления",
                                                                      target: self,
                                                                      action: #selector(notificationButtonTapped))

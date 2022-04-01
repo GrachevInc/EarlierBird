@@ -23,7 +23,7 @@ class TodayAlarmTimeView: UIView {
     
     
     
-    private let isOnAlarmSwitch: UISwitch = {
+    private lazy var isOnAlarmSwitch: UISwitch = {
         let alarmSwitch = UISwitch()
         alarmSwitch.translatesAutoresizingMaskIntoConstraints = false
         alarmSwitch.onTintColor = .specialRed
