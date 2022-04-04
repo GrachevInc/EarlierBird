@@ -9,6 +9,14 @@ import UIKit
 
 class MainTabViewController: UITabBarController {
 
+    enum Constants {
+        static let backgroundColor = UIColor.specialGreen
+        static let tintColor = UIColor.specialBlue
+        static let unselectedItemTintColor = UIColor.specialBackground
+        static let borderColor = UIColor.specialBlue.cgColor
+        static let borderWidth: CGFloat = 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
@@ -16,11 +24,11 @@ class MainTabViewController: UITabBarController {
     }
     
     private func setupTabBar() {
-        tabBar.backgroundColor = .specialGreen
-        tabBar.tintColor = .specialBlue
-        tabBar.unselectedItemTintColor = .specialBackground
-        tabBar.layer.borderColor = UIColor.specialBlue.cgColor
-        tabBar.layer.borderWidth = 1
+        tabBar.backgroundColor = Constants.backgroundColor
+        tabBar.tintColor = Constants.tintColor
+        tabBar.unselectedItemTintColor = Constants.unselectedItemTintColor
+        tabBar.layer.borderColor = Constants.borderColor
+        tabBar.layer.borderWidth = Constants.borderWidth
     }
 
     private func setupItems() {
