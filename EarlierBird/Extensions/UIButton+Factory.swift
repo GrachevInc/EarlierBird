@@ -8,6 +8,13 @@
 import UIKit
 
 extension UIButton {
+    
+    enum Constants {
+        enum CornerRadius {
+            static let defaultCornerRadius: CGFloat = 10
+        }
+    }
+    
     static func createDefaultTimeButton(image imageName: String,
                                         setTitle title: String,
                                         font: UIFont?,

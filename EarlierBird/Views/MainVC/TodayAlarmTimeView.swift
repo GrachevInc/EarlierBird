@@ -9,6 +9,13 @@ import UIKit
 
 class TodayAlarmTimeView: UIView {
     
+    enum Constants {
+        enum TodayAlarmView {
+            static let digitalDialFaceIconToTopEdge: CGFloat = 2
+            static let digitalDialFaceIconHeight: CGFloat = 90
+        }
+    }
+    
     private let textTodayAlarmLabel = UILabel(text: "Будильник сегодня",
                                               textAlignment: .center,
                                               font: .specialRobotoBold18(),
@@ -74,9 +81,9 @@ extension TodayAlarmTimeView {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             textTodayAlarmLabel.topAnchor.constraint(equalTo: topAnchor,
-                                                     constant: Constants.ContraintsSize.defaultDistanceToTopEdge),
-            textTodayAlarmLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
-            textTodayAlarmLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
+                                                     constant: MainConstants.ContraintsSize.defaultDistanceToTopEdge),
+            textTodayAlarmLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
+            textTodayAlarmLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
         NSLayoutConstraint.activate([
@@ -89,15 +96,15 @@ extension TodayAlarmTimeView {
         NSLayoutConstraint.activate([
             timeTodayAlarmLabel.centerYAnchor.constraint(equalTo: digitalDialFaceImageView.centerYAnchor),
             timeTodayAlarmLabel.leadingAnchor.constraint(equalTo: digitalDialFaceImageView.leadingAnchor,
-                                                         constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+                                                         constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
             timeTodayAlarmLabel.trailingAnchor.constraint(equalTo: digitalDialFaceImageView.trailingAnchor,
-                                                          constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
+                                                          constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
         NSLayoutConstraint.activate([
             isOnAlarmSwitch.centerYAnchor.constraint(equalTo: digitalDialFaceImageView.centerYAnchor),
             isOnAlarmSwitch.leadingAnchor.constraint(equalTo: digitalDialFaceImageView.trailingAnchor,
-                                                     constant: Constants.ContraintsSize.defaultDisctanceToSideEdge)
+                                                     constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
     }
 }

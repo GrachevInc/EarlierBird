@@ -9,6 +9,15 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    enum Constants {
+        enum SettingsController {
+            static let spacingHorizontalStackView: CGFloat = 10
+            static let spacingVerticalStackView: CGFloat = 5
+            static let spacingGeneralStackView: CGFloat = 10
+            static let notificationButtonHeight: CGFloat = 45
+        }
+    }
+    
     private let screenSettingsNameLabel = UILabel(text: "НАСТРОЙКИ",
                                                   textAlignment: .center,
                                                   font: .specialRobotoBold20(),
@@ -56,20 +65,6 @@ class SettingsViewController: UIViewController {
                                                                      action: #selector(notificationButtonTapped))
         
     }()
-    
-//    private let notificationButton: UIButton = {
-//        let button = UIButton(type: .system)
-//        button.tintColor = .specialBlue
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        button.setTitle("Включить уведомления", for: .normal)
-//        button.setTitleColor(.specialBlue, for: .normal)
-//        button.setImage(UIImage(named: "notificationButton")?.withRenderingMode(.alwaysOriginal), for: .normal)
-//        button.backgroundColor = .specialGreen
-//        button.layer.cornerRadius = 10
-//        button.addTarget(self, action: #selector(notificationButtonTapped), for: .touchUpInside)
-//        button.addShadowOnView()
-//        return button
-//    }()
     
     private var todayButtonStackView = UIStackView()
     private var goalButtonStackView = UIStackView()
@@ -123,7 +118,7 @@ class SettingsViewController: UIViewController {
                                                               secondHorizontalStackView],
                                            axis: .vertical,
                                            spacing: Constants.SettingsController.spacingGeneralStackView)
-        generalGoalStackView.layer.cornerRadius = Constants.CornerRadius.defaultCornerRadius
+        generalGoalStackView.layer.cornerRadius = MainConstants.CornerRadius.defaultCornerRadius
         view.addSubview(generalGoalStackView)
     
         view.addSubview(notificationButton)
@@ -160,25 +155,25 @@ extension SettingsViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             screenSettingsNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                                         constant: Constants.ContraintsSize.defaultDistanceToTopSafeAreaEdge),
+                                                         constant: MainConstants.ContraintsSize.defaultDistanceToTopSafeAreaEdge),
             screenSettingsNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
             generalGoalStackView.topAnchor.constraint(equalTo: screenSettingsNameLabel.bottomAnchor,
-                                                      constant: Constants.ContraintsSize.defaultDistanceBetweenViews),
+                                                      constant: MainConstants.ContraintsSize.defaultDistanceBetweenViews),
             generalGoalStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             generalGoalStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                          constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+                                                          constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
             generalGoalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                           constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
+                                                           constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
         NSLayoutConstraint.activate([
             notificationButton.topAnchor.constraint(equalTo: generalGoalStackView.bottomAnchor,
-                                                    constant: Constants.ContraintsSize.defaultDistanceBetweenViews),
-            notificationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
-            notificationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge),
+                                                    constant: MainConstants.ContraintsSize.defaultDistanceBetweenViews),
+            notificationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
+            notificationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
             notificationButton.heightAnchor.constraint(equalToConstant: Constants.SettingsController.notificationButtonHeight)
         ])
     }

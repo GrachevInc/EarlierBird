@@ -9,6 +9,17 @@ import UIKit
 
 class BriefProgressStatisticView: UIView {
     
+    enum Constants {
+        enum ProgressView{
+            static let calendarIconDistanceToTopEdge: CGFloat = 10
+            static let calendarIconHeightWidth: CGFloat = 60
+            static let textDistanceToTopEdge: CGFloat = 20
+            static let progressViewHeight: CGFloat = 20
+            static let progressViewDistanceToTopEdge: CGFloat = 15
+            static let progressIconsHeightWidth: CGFloat = 35
+        }
+    }
+    
     private let calendarProgressImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "calendarBriefStatistic")
@@ -82,7 +93,7 @@ class BriefProgressStatisticView: UIView {
         NSLayoutConstraint.activate([
             calendarProgressImageView.topAnchor.constraint(equalTo: topAnchor,
                                                            constant: Constants.ProgressView.calendarIconDistanceToTopEdge),
-            calendarProgressImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+            calendarProgressImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
             calendarProgressImageView.widthAnchor.constraint(equalToConstant: Constants.ProgressView.calendarIconHeightWidth),
             calendarProgressImageView.heightAnchor.constraint(equalToConstant: Constants.ProgressView.calendarIconHeightWidth)
         ])
@@ -91,9 +102,9 @@ class BriefProgressStatisticView: UIView {
             textCalendarProgressLabel.topAnchor.constraint(equalTo: topAnchor,
                                                            constant: Constants.ProgressView.textDistanceToTopEdge),
             textCalendarProgressLabel.leadingAnchor.constraint(equalTo: calendarProgressImageView.trailingAnchor,
-                                                               constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+                                                               constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
             textCalendarProgressLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                                constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
+                                                                constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
         NSLayoutConstraint.activate([
@@ -101,15 +112,15 @@ class BriefProgressStatisticView: UIView {
             briefProgressView.topAnchor.constraint(equalTo: textCalendarProgressLabel.bottomAnchor,
                                                    constant: Constants.ProgressView.progressViewDistanceToTopEdge),
             briefProgressView.leadingAnchor.constraint(equalTo: startProgressImageView.trailingAnchor,
-                                                       constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+                                                       constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
             briefProgressView.trailingAnchor.constraint(equalTo: finishProgressImageView.leadingAnchor,
-                                                        constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge)
+                                                        constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge)
         ])
         
         NSLayoutConstraint.activate([
             startProgressImageView.centerYAnchor.constraint(equalTo: briefProgressView.centerYAnchor),
             startProgressImageView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                            constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+                                                            constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
             startProgressImageView.heightAnchor.constraint(equalToConstant: Constants.ProgressView.progressIconsHeightWidth),
             startProgressImageView.widthAnchor.constraint(equalToConstant: Constants.ProgressView.progressIconsHeightWidth)
         ])
@@ -117,7 +128,7 @@ class BriefProgressStatisticView: UIView {
         NSLayoutConstraint.activate([
             finishProgressImageView.centerYAnchor.constraint(equalTo: briefProgressView.centerYAnchor),
             finishProgressImageView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                              constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge),
+                                                              constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
             finishProgressImageView.heightAnchor.constraint(equalToConstant: Constants.ProgressView.progressIconsHeightWidth),
             finishProgressImageView.widthAnchor.constraint(equalToConstant: Constants.ProgressView.progressIconsHeightWidth)
         ])

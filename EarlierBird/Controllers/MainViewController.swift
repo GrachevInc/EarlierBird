@@ -9,6 +9,14 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    enum Constants {
+        enum MainViewController {
+            static let timeLabelStackViewSpacing: CGFloat = -13
+            static let timeLabelStackViewWidth: CGFloat = 130
+            static let goalImageHeightMultiplier: CGFloat = 0.9
+        }
+    }
+    
     private let goalImageView: UIImageView = .createDefault(named: "goal")
     
     private let textTimeLabel = UILabel(text: "Просыпаться в",
@@ -61,7 +69,7 @@ extension MainViewController {
         
         NSLayoutConstraint.activate([
             goalImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                               constant: Constants.ContraintsSize.defaultDistanceToTopSafeAreaEdge),
+                                               constant: MainConstants.ContraintsSize.defaultDistanceToTopSafeAreaEdge),
             goalImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             goalImageView.heightAnchor.constraint(equalTo: view.widthAnchor,
                                                   multiplier: Constants.MainViewController.goalImageHeightMultiplier)
@@ -75,22 +83,22 @@ extension MainViewController {
         
         NSLayoutConstraint.activate([
             todayAlarmTimeView.topAnchor.constraint(equalTo: goalImageView.bottomAnchor,
-                                                    constant: Constants.ContraintsSize.defaultDistanceBetweenViews),
+                                                    constant: MainConstants.ContraintsSize.defaultDistanceBetweenViews),
             todayAlarmTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                        constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+                                                        constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
             todayAlarmTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                         constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge),
-            todayAlarmTimeView.heightAnchor.constraint(equalToConstant: Constants.ContraintsSize.defaultViewHeight)
+                                                         constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
+            todayAlarmTimeView.heightAnchor.constraint(equalToConstant: MainConstants.ContraintsSize.defaultViewHeight)
         ])
         
         NSLayoutConstraint.activate([
             briefProgressStatisticView.topAnchor.constraint(equalTo: todayAlarmTimeView.bottomAnchor,
-                                                            constant:  Constants.ContraintsSize.defaultDistanceBetweenViews),
+                                                            constant:  MainConstants.ContraintsSize.defaultDistanceBetweenViews),
             briefProgressStatisticView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                                constant: Constants.ContraintsSize.defaultDisctanceToSideEdge),
+                                                                constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
             briefProgressStatisticView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                                 constant: -Constants.ContraintsSize.defaultDisctanceToSideEdge),
-            briefProgressStatisticView.heightAnchor.constraint(equalToConstant: Constants.ContraintsSize.defaultViewHeight)
+                                                                 constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
+            briefProgressStatisticView.heightAnchor.constraint(equalToConstant: MainConstants.ContraintsSize.defaultViewHeight)
         ])
     }
 }
