@@ -14,18 +14,24 @@ class TodayAlarmTimeView: UIView {
             static let digitalDialFaceIconToTopEdge: CGFloat = 2
             static let digitalDialFaceIconHeight: CGFloat = 90
         }
+
+        enum Fonts {
+            static let fontTextTodayAlarmLabel = UIFont.specialRobotoBold18()
+            static let fontTimeTodayAlarmLabel = UIFont.specialTimeFont30()
+        }
+        
     }
     
     private let textTodayAlarmLabel = UILabel(text: "Будильник сегодня",
                                               textAlignment: .center,
-                                              font: .specialRobotoBold18(),
+                                              font: Constants.Fonts.fontTextTodayAlarmLabel,
                                               textColor: .white)
 
     private let digitalDialFaceImageView: UIImageView = .createDefault(named: "digitalDialFace")
     
     private let timeTodayAlarmLabel = UILabel(text: "07:28",
                                               textAlignment: .center,
-                                              font: .specialTimeFont30(),
+                                              font: Constants.Fonts.fontTimeTodayAlarmLabel,
                                               textColor: .specialBlue)
     
     

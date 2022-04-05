@@ -19,29 +19,15 @@ class SettingsViewController: UIViewController {
     }
     
     private let screenSettingsNameLabel = UILabel(text: "НАСТРОЙКИ",
-                                                  textAlignment: .center,
-                                                  font: .specialRobotoBold20(),
-                                                  textColor: .white)
+                                                  font: .specialRobotoBold24())
     
-    private let todayTimeWakeUpTextLabel = UILabel(text: "Просыпаюсь",
-                                                  textAlignment: .center,
-                                                  font: .specialRobotoBold18(),
-                                                  textColor: .white)
+    private let todayTimeWakeUpTextLabel = UILabel(text: "Просыпаюсь в")
     
-    private let goalTimeWakeUpTextLabel = UILabel(text: "Цель",
-                                                  textAlignment: .center,
-                                                  font: .specialRobotoBold18(),
-                                                  textColor: .white)
+    private let goalTimeWakeUpTextLabel = UILabel(text: "Цель")
     
-    private let intervalTimeWakeUpTextLabel = UILabel(text: "Интервал",
-                                                  textAlignment: .center,
-                                                  font: .specialRobotoBold18(),
-                                                  textColor: .white)
+    private let intervalTimeWakeUpTextLabel = UILabel(text: "Интервал")
     
-    private let dateTimeWakeUpTextLabel = UILabel(text: "Дата",
-                                                  textAlignment: .center,
-                                                  font: .specialRobotoBold18(),
-                                                  textColor: .white)
+    private let dateTimeWakeUpTextLabel = UILabel(text: "Дата")
     
     private lazy var setTodayTimeWakeUpButton: UIButton = {.createDefaultTimeButton(image: "digitalDialFace",
                                                                               setTitle: "08:43",

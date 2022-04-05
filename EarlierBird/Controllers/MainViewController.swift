@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     enum Constants {
-        enum MainViewController {
+        enum ConstraintsMainViewController {
             static let timeLabelStackViewSpacing: CGFloat = -13
             static let timeLabelStackViewWidth: CGFloat = 130
             static let goalImageHeightMultiplier: CGFloat = 0.9
@@ -48,7 +48,7 @@ class MainViewController: UIViewController {
         
         timeLabelStackView = .init(arrangedSubviews: [textTimeLabel, timeLabel],
                                    axis: .vertical,
-                                   spacing: Constants.MainViewController.timeLabelStackViewSpacing)
+                                   spacing: Constants.ConstraintsMainViewController.timeLabelStackViewSpacing)
         timeLabelStackView.distribution = .equalCentering
         view.addSubview(timeLabelStackView)
         
@@ -72,13 +72,13 @@ extension MainViewController {
                                                constant: MainConstants.ContraintsSize.defaultDistanceToTopSafeAreaEdge),
             goalImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             goalImageView.heightAnchor.constraint(equalTo: view.widthAnchor,
-                                                  multiplier: Constants.MainViewController.goalImageHeightMultiplier)
+                                                  multiplier: Constants.ConstraintsMainViewController.goalImageHeightMultiplier)
         ])
         
         NSLayoutConstraint.activate([
             timeLabelStackView.centerYAnchor.constraint(equalTo: goalImageView.centerYAnchor),
             timeLabelStackView.centerXAnchor.constraint(equalTo: goalImageView.centerXAnchor),
-            timeLabelStackView.widthAnchor.constraint(equalToConstant: Constants.MainViewController.timeLabelStackViewWidth)
+            timeLabelStackView.widthAnchor.constraint(equalToConstant: Constants.ConstraintsMainViewController.timeLabelStackViewWidth)
         ])
         
         NSLayoutConstraint.activate([

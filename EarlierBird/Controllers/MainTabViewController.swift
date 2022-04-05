@@ -20,6 +20,10 @@ class MainTabViewController: UITabBarController {
         enum Intervals {
             static let borderWidth: CGFloat = 1
         }
+        
+        enum Fonts {
+            static let titleFont = UIFont.specialRobotoMedium14()
+        }
     }
     
     override func viewDidLoad() {
@@ -50,6 +54,6 @@ class MainTabViewController: UITabBarController {
         items[0].image = UIImage(systemName: "clock.arrow.2.circlepath")
         items[1].image = UIImage(systemName: "gearshape")
         
-        UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont.specialRobotoMedium14() as Any], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([.font: Constants.Fonts.titleFont as Any], for: .normal)
     }
 }
