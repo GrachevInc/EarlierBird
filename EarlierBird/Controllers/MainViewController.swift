@@ -9,48 +9,30 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    private let settingsButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "settings"), for: .normal)
-        button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    enum Constants {
+        enum ConstraintsMainViewController {
+            static let timeLabelStackViewSpacing: CGFloat = -13
+            static let timeLabelStackViewWidth: CGFloat = 130
+            static let goalImageHeightMultiplier: CGFloat = 0.9
+        }
+    }
     
-    private let goalImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "goal")
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    private let goalImageView: UIImageView = .createDefault(named: "goal")
     
-    private let textTimeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Просыпаться в"
-        label.textAlignment = .center
-        label.font = .specialRobotoMedium30()
-        label.textColor = .specialBlue
-        label.adjustsFontSizeToFitWidth = true
-        return label
-    }()
+    private let textTimeLabel = UILabel(text: "Просыпаться в",
+                                        textAlignment: .center,
+                                        font: .specialRobotoMedium30(),
+                                        textColor: .specialBlue)
     
-    private let timeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "05:38"
-        label.textAlignment = .center
-        label.font = .specialTimeFont46()
-        label.textColor = .specialBlue
-        label.adjustsFontSizeToFitWidth = true
-        return label
-    }()
+    private let timeLabel = UILabel(text: "06:55",
+                                    textAlignment: .center,
+                                    font: .specialTimeFont46(),
+                                    textColor: .specialBlue)
+    
+    private var timeLabelStackView = UIStackView()
     
     private let todayAlarmTimeView = TodayAlarmTimeView()
     private let briefProgressStatisticView = BriefProgressStatisticView()
-    
-    private var timeLabelStackView = UIStackView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,17 +40,18 @@ class MainViewController: UIViewController {
         setConstraints()
     }
     
-    //MARK: – setupViews
+    // MARK: - setupViews
 
     private func setupViews() {
         view.backgroundColor = .specialBackground
         view.addSubview(goalImageView)
-        view.addSubview(settingsButton)
         
         timeLabelStackView = .init(arrangedSubviews: [textTimeLabel, timeLabel],
                                    axis: .vertical,
-                                   spacing: -10)
+                                   spacing: Constants.ConstraintsMainViewController.timeLabelStackViewSpacing)
+        timeLabelStackView.distribution = .equalCentering
         view.addSubview(timeLabelStackView)
+        
         view.addSubview(todayAlarmTimeView)
         view.addSubview(briefProgressStatisticView)
     }
@@ -79,41 +62,43 @@ class MainViewController: UIViewController {
 
 }
 
-//MARK: – setDelegates
+// MARK: - setConstraints
 
 extension MainViewController {
     private func setConstraints() {
-        NSLayoutConstraint.activate([
-            settingsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            settingsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            settingsButton.heightAnchor.constraint(equalToConstant: 60),
-            settingsButton.widthAnchor.constraint(equalToConstant: 60)
-        ])
         
         NSLayoutConstraint.activate([
-            goalImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            goalImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                               constant: MainConstants.ContraintsSize.defaultDistanceToTopSafeAreaEdge),
             goalImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            goalImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+            goalImageView.heightAnchor.constraint(equalTo: view.widthAnchor,
+                                                  multiplier: Constants.ConstraintsMainViewController.goalImageHeightMultiplier)
         ])
         
         NSLayoutConstraint.activate([
             timeLabelStackView.centerYAnchor.constraint(equalTo: goalImageView.centerYAnchor),
             timeLabelStackView.centerXAnchor.constraint(equalTo: goalImageView.centerXAnchor),
-            timeLabelStackView.widthAnchor.constraint(equalToConstant: 130)
+            timeLabelStackView.widthAnchor.constraint(equalToConstant: Constants.ConstraintsMainViewController.timeLabelStackViewWidth)
         ])
         
         NSLayoutConstraint.activate([
-            todayAlarmTimeView.topAnchor.constraint(equalTo: goalImageView.bottomAnchor, constant: 20),
-            todayAlarmTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            todayAlarmTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            todayAlarmTimeView.heightAnchor.constraint(equalToConstant: 130)
+            todayAlarmTimeView.topAnchor.constraint(equalTo: goalImageView.bottomAnchor,
+                                                    constant: MainConstants.ContraintsSize.defaultDistanceBetweenViews),
+            todayAlarmTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                        constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
+            todayAlarmTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                         constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
+            todayAlarmTimeView.heightAnchor.constraint(equalToConstant: MainConstants.ContraintsSize.defaultViewHeight)
         ])
         
         NSLayoutConstraint.activate([
-            briefProgressStatisticView.topAnchor.constraint(equalTo: todayAlarmTimeView.bottomAnchor, constant: 20),
-            briefProgressStatisticView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            briefProgressStatisticView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            briefProgressStatisticView.heightAnchor.constraint(equalToConstant: 130)
+            briefProgressStatisticView.topAnchor.constraint(equalTo: todayAlarmTimeView.bottomAnchor,
+                                                            constant:  MainConstants.ContraintsSize.defaultDistanceBetweenViews),
+            briefProgressStatisticView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                                constant: MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
+            briefProgressStatisticView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                                 constant: -MainConstants.ContraintsSize.defaultDisctanceToSideEdge),
+            briefProgressStatisticView.heightAnchor.constraint(equalToConstant: MainConstants.ContraintsSize.defaultViewHeight)
         ])
     }
 }

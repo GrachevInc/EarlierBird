@@ -16,6 +16,22 @@ extension UIFont {
         UIFont.init(name: "Rubik-Bold", size: 30)
     }
     
+    static func specialRobotoBold16() -> UIFont? {
+        UIFont.init(name: "Roboto-Bold", size: 16)
+    }
+    
+    static func specialRobotoBold18() -> UIFont? {
+        UIFont.init(name: "Roboto-Bold", size: 18)
+    }
+    
+    static func specialRobotoBold20() -> UIFont? {
+        UIFont.init(name: "Roboto-Bold", size: 20)
+    }
+    
+    static func specialRobotoBold24() -> UIFont? {
+        UIFont.init(name: "Roboto-Bold", size: 24)
+    }
+    
     static func specialRobotoBold46() -> UIFont? {
         UIFont.init(name: "Roboto-Bold", size: 46)
     }
@@ -26,6 +42,10 @@ extension UIFont {
     
     static func specialRobotoMedium14() -> UIFont? {
         UIFont.init(name: "Roboto-Medium", size: 14)
+    }
+    
+    static func specialRobotoMedium16() -> UIFont? {
+        UIFont.init(name: "Roboto-Medium", size: 16)
     }
     
     static func specialRobotoMedium30() -> UIFont? {
